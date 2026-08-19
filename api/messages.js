@@ -37,7 +37,7 @@ export default async function handler(req, res) {
     const msg = {
       from: me,
       to: toKey,
-      text: String(text).trim().slice(0, 2000),
+      text: String(text).slice(0, 2000),
       ts: Date.now(),
     };
     await kv.rpush(`chat:${cid}`, JSON.stringify(msg));
